@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import TopNavigation from "./TopNavigation.tsx";
 import {Route, Routes} from "react-router-dom";
 import HomePage from "./HomePage.tsx";
@@ -10,6 +10,10 @@ import AddCharacter from "./AddCharacter.tsx";
 
 export default function App() {
     const [characters, setCharacters] = useState<Character[]>(charactersResponse.results);
+
+    useEffect(() => {
+        console.log("test");
+    }, []);
 
 
     function saveCharacter(characterToSave: Character) {
